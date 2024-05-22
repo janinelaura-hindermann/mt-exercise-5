@@ -16,6 +16,7 @@ SECONDS=0
 
 logs=$base/logs
 
+# --- TODO add model name here ---
 model_name=?
 
 mkdir -p $logs
