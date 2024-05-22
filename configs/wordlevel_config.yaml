@@ -34,9 +34,8 @@ data:
     lowercase: False
     # inspired by exercise 4
     max_sent_length: 100
-    # use of "voc_limit" recommended for word-level NMT
-    # value inspired by exercise 4
-    voc_limit: 32000
+    # use of "voc_limit" recommended for word-level NMT, value taken from task description
+    voc_limit: 2000
     # inspired by exercise 4
     tokenizer_type: "subword-nmt"
     # TODO
