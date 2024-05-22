@@ -46,12 +46,15 @@ Evaluate a trained model with
 
 # Modifications
 
+To activate venv:
+source ./../venvs/torch3/bin/activate
+
 Languages:
 
 - English (src)
 - German (trg)
 
-So we take data with "en-de".
+So we take data with "en-de" (en->de).
 
 ## Sample Training Data
 
@@ -71,4 +74,37 @@ We added config files for the word-level and the bpe model in the `configs` dire
 
     bpe_config.yaml
     wordlevel_config.yaml
+
+## Create Byte Pair Encoding File
+
+As recommended, we have taken a look at this best practice implementation:
+https://github.com/rsennrich/subword-nmt?tab=readme-ov-file#best-practice-advice-for-byte-pair-encoding-in-nmt
+
+In this repository, there is a command which can be executed after subword-nmt is installed (e.g. with pip)
+```
+subword-nmt learn-joint-bpe-and-vocab --input {train_file}.L1 {train_file}.L2 -s {num_operations} -o {codes_file} --write-vocabulary {vocab_file}.L1 {vocab_file}.L2
+```
+
+We replaced the following placeholders with our values:
+- L1 = en
+- L2 = de
+- num_operations = 2000 (since vocabulary size is 2000)
+- train_file = sampled_train.en-de
+- codes_file = bpe_code
+- vocab_file = vocab
+
+This results in the following command:
+
+```
+subword-nmt learn-joint-bpe-and-vocab --input sampled_train.en-de.en sampled_train.en-de.de -s 2000 -o bpe_code --write-vocabulary vocab.en vocab.de
+
+```
+
+
+TODO: Reapply needed??? 
+
+Then reapply the byte pair encoding with vocabulary filter:
+
+subword-nmt apply-bpe -c bpe_code --vocabulary vocab.en --vocabulary-threshold 50 < sampled_train.en-de.en > sampled_train.en-de.BPE.en
+
 
