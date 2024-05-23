@@ -75,36 +75,60 @@ We added config files for the word-level and the bpe model in the `configs` dire
     bpe_config.yaml
     wordlevel_config.yaml
 
-## Create Byte Pair Encoding File
+## Learn BPE model and create vocabulary file
 
 As recommended, we have taken a look at this best practice implementation:
 https://github.com/rsennrich/subword-nmt?tab=readme-ov-file#best-practice-advice-for-byte-pair-encoding-in-nmt
 
 In this repository, there is a command which can be executed after subword-nmt is installed (e.g. with pip)
+
 ```
 subword-nmt learn-joint-bpe-and-vocab --input {train_file}.L1 {train_file}.L2 -s {num_operations} -o {codes_file} --write-vocabulary {vocab_file}.L1 {vocab_file}.L2
 ```
 
 We replaced the following placeholders with our values:
-- L1 = en
-- L2 = de
-- num_operations = 2000 (since vocabulary size is 2000)
-- train_file = sampled_train.en-de
-- codes_file = bpe_code
-- vocab_file = vocab
+
+- `L1` = en
+- `L2` = de
+- `num_operations` = 2000 (since vocabulary size is 2000)
+- `train_file` = sampled_train.en-de
+- `codes_file` = bpe_code
+- `vocab_file` = vocab
+
+As mentioned in the task description, we should add the `--total-symbols` to ensure the vocabulary is
+of the exact size you specify with the argument -s. Without this argument, the vocabulary
+size is approximate since the set of single characters is not taken into account.
 
 This results in the following command:
 
 ```
-subword-nmt learn-joint-bpe-and-vocab --input sampled_train.en-de.en sampled_train.en-de.de -s 2000 -o bpe_code --write-vocabulary vocab.en vocab.de
+subword-nmt learn-joint-bpe-and-vocab --input sampled_train.en-de.en sampled_train.en-de.de -s 2000 -o bpe_code --write-vocabulary vocab.en vocab.de --total-symbols
 
 ```
 
-
-TODO: Reapply needed??? 
-
 Then reapply the byte pair encoding with vocabulary filter:
 
+First for English:
+
+```
 subword-nmt apply-bpe -c bpe_code --vocabulary vocab.en --vocabulary-threshold 50 < sampled_train.en-de.en > sampled_train.en-de.BPE.en
+```
 
+Then for German:
 
+```
+subword-nmt apply-bpe -c bpe_code --vocabulary vocab.de --vocabulary-threshold 50 < sampled_train.en-de.de > sampled_train.en-de.BPE.de
+```
+
+Now we have to create a joint vocabulary file. For this, we created the following script:
+
+        create_joint_vocabulary.py
+
+It concatenates both of the vocab output files from the previous step and removes counts (such as mentioned in the
+exercise) and removes duplicates.
+
+The last step is to also reapply the byte pair encoding for the validation and test data. For this purpose we created the following script:
+    
+            apply_bpe_dev_test.py
+
+Now we have the BPE files for the training, validation and test data.
