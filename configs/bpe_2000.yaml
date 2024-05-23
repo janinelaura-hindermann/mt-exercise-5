@@ -1,14 +1,14 @@
-name: "bpe_config"
+name: "bpe_2000"
 joeynmt_version: "2.0.0"
 
 
 data:
   # take the sampled training data
-  train: "data_sampled/sampled_train"
+  train: "data_sampled/sampled_train.en-de"
   # take the original dev data
-  dev: "data/dev"
+  dev: "data/dev.en-de"
   # take the original test data
-  test: "data/test"
+  test: "data/test.en-de"
   dataset_type: "plain"
   src:
     lang: "en"
@@ -20,12 +20,14 @@ data:
     max_sent_length: 100
     # use of "voc_file" recommended for bpe NMT
     # TODO file
-    voc_file: "shared_models/joint-vocab.txt"
+    voc_file: "data_bpe/joint_vocab_clean.txt"
     # inspired by exercise 4
     tokenizer_type: "subword-nmt"
     # TODO
     tokenizer_cfg:
-      ?
+      pretokenizer: "none"
+      num_merges: 2000
+      codes: "data_bpe/bpe_code.bpe"
   trg:
     lang: "de"
     # bpe
@@ -36,12 +38,14 @@ data:
     max_sent_length: 100
     # use of "voc_file" recommended for bpe NMT
     # TODO file
-    voc_file: "shared_models/joint-vocab.txt"
+    voc_file: "data_bpe/joint_vocab_clean.txt"
     # inspired by exercise 4
     tokenizer_type: "subword-nmt"
     # TODO
     tokenizer_cfg:
-      ?
+      pretokenizer: "none"
+      num_merges: 2000
+      codes: "data_bpe/bpe_code.bpe"
 
 testing:
   # inspired by exercise 4
@@ -67,7 +71,7 @@ training:
   logging_freq: 100
   eval_metric: "bleu"
   # added model path
-  model_dir: "models/model_bpe"
+  model_dir: "../models/model_bpe_2000"
   overwrite: False
   shuffle: True
   use_cuda: False
