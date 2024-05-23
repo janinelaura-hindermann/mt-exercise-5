@@ -34,7 +34,7 @@ if __name__ == "__main__":
     train_file_de = os.path.join(data_dir, "sampled_train.en-de.de")
 
     # BPE files
-    codes_file = os.path.join(output_dir, "bpe_code")
+    codes_file = os.path.join(output_dir, "bpe_code.bpe")
     vocab_file_en = os.path.join(output_dir, "vocab.en")
     vocab_file_de = os.path.join(output_dir, "vocab.de")
 

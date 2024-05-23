@@ -32,7 +32,7 @@ if __name__ == "__main__":
     dev_bpe_de = os.path.join(bpe_dir, "dev.en-de.de")
 
     # BPE code file
-    bpe_code = os.path.join(bpe_dir, "bpe_code")
+    bpe_code = os.path.join(bpe_dir, "bpe_code.bpe")
 
     # Apply BPE encoding to test and dev data
     apply_bpe(test_en, test_bpe_en, bpe_code, vocab_en)
