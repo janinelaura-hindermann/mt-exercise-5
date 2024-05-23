@@ -99,36 +99,22 @@ As mentioned in the task description, we should add the `--total-symbols` to ens
 of the exact size you specify with the argument -s. Without this argument, the vocabulary
 size is approximate since the set of single characters is not taken into account.
 
-This results in the following command:
+Further we heave to reapply the byte pair encoding with vocabulary filter for the German and English training data.
 
-```
-subword-nmt learn-joint-bpe-and-vocab --input sampled_train.en-de.en sampled_train.en-de.de -s 2000 -o bpe_code --write-vocabulary vocab.en vocab.de --total-symbols
+The code can be found in the `scripts` directory:
 
-```
-
-Then reapply the byte pair encoding with vocabulary filter:
-
-First for English:
-
-```
-subword-nmt apply-bpe -c bpe_code --vocabulary vocab.en --vocabulary-threshold 50 < sampled_train.en-de.en > sampled_train.en-de.BPE.en
-```
-
-Then for German:
-
-```
-subword-nmt apply-bpe -c bpe_code --vocabulary vocab.de --vocabulary-threshold 50 < sampled_train.en-de.de > sampled_train.en-de.BPE.de
-```
+    bpe_learning.py
 
 Now we have to create a joint vocabulary file. For this, we created the following script:
 
-        create_joint_vocabulary.py
+    create_joint_vocabulary.py
 
 It concatenates both of the vocab output files from the previous step and removes counts (such as mentioned in the
 exercise) and removes duplicates.
 
-The last step is to also reapply the byte pair encoding for the validation and test data. For this purpose we created the following script:
-    
-            apply_bpe_dev_test.py
+The last step is to also reapply the byte pair encoding for the validation and test data. For this purpose we created
+the following script:
+
+    apply_bpe_dev_test.py
 
 Now we have the BPE files for the training, validation and test data.

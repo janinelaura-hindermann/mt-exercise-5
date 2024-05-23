@@ -33,16 +33,23 @@ def delete_intermediate_files(*files):
 
 
 if __name__ == "__main__":
+    # Directories
+    base_dir = os.path.abspath(os.path.dirname(__file__))
+    data_bpe_dir = os.path.join(base_dir, "data_bpe")
+
+    # Ensure the data_bpe directory exists
+    os.makedirs(data_bpe_dir, exist_ok=True)
+
     # Files generated
-    vocab_en = "data_sampled/vocab.en"
-    vocab_de = "data_sampled/vocab.de"
+    vocab_en = os.path.join(data_bpe_dir, "vocab.en")
+    vocab_de = os.path.join(data_bpe_dir, "vocab.de")
 
     # Output files
-    vocab_en_clean = "vocab_clean.en"
-    vocab_de_clean = "vocab_clean.de"
-    joint_vocab_raw = "joint_vocab_raw.txt"
-    joint_vocab_sorted = "joint_vocab.txt"
-    joint_vocab_clean = "data_sampled/joint_vocab_clean.txt"
+    vocab_en_clean = os.path.join(data_bpe_dir, "vocab_clean.en")
+    vocab_de_clean = os.path.join(data_bpe_dir, "vocab_clean.de")
+    joint_vocab_raw = os.path.join(data_bpe_dir, "joint_vocab_raw.txt")
+    joint_vocab_sorted = os.path.join(data_bpe_dir, "joint_vocab_sorted.txt")
+    joint_vocab_clean = os.path.join(data_bpe_dir, "joint_vocab_clean.txt")
 
     # Step 1: Remove counts from individual vocab files
     remove_counts(vocab_en, vocab_en_clean)
