@@ -26,10 +26,10 @@ if __name__ == "__main__":
     dev_de = os.path.join(data_dir, "dev.en-de.de")
 
     # BPE encoded output files
-    test_bpe_en = os.path.join(bpe_dir, "test.BPE.en")
-    test_bpe_de = os.path.join(bpe_dir, "test.BPE.de")
-    dev_bpe_en = os.path.join(bpe_dir, "dev.BPE.en")
-    dev_bpe_de = os.path.join(bpe_dir, "dev.BPE.de")
+    test_bpe_en = os.path.join(bpe_dir, "test.en-de.en")
+    test_bpe_de = os.path.join(bpe_dir, "test.en-de.de")
+    dev_bpe_en = os.path.join(bpe_dir, "dev.en-de.en")
+    dev_bpe_de = os.path.join(bpe_dir, "dev.en-de.de")
 
     # BPE code file
     bpe_code = os.path.join(bpe_dir, "bpe_code")
