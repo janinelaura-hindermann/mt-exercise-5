@@ -35,7 +35,7 @@ def delete_intermediate_files(*files):
 if __name__ == "__main__":
     # Directories
     base_dir = os.path.abspath(os.path.dirname(__file__))
-    data_bpe_dir = os.path.join(base_dir, "data_bpe")
+    data_bpe_dir = os.path.join(base_dir, "data_bpe_5000")
 
     # Ensure the data_bpe directory exists
     os.makedirs(data_bpe_dir, exist_ok=True)

@@ -80,6 +80,9 @@ We added config files for the word-level and the bpe model in the `configs` dire
 As recommended, we have taken a look at this best practice implementation:
 https://github.com/rsennrich/subword-nmt?tab=readme-ov-file#best-practice-advice-for-byte-pair-encoding-in-nmt
 
+We did the following two times, once with vocabulary size 2000 and once with vocabulary size 5000.
+We simply adjusted some parameters and file names in the scripts which is not mentioned further here.
+
 In this repository, there is a command which can be executed after subword-nmt is installed (e.g. with pip)
 
 ```
@@ -90,7 +93,7 @@ We replaced the following placeholders with our values:
 
 - `L1` = en
 - `L2` = de
-- `num_operations` = 2000 (since vocabulary size is 2000)
+- `num_operations` = 2000 (since recommended vocabulary size is 2000) or 5000 (experiment)
 - `train_file` = sampled_train.en-de
 - `codes_file` = bpe_code
 - `vocab_file` = vocab

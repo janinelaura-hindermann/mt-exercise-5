@@ -12,7 +12,7 @@ if __name__ == "__main__":
     data_dir = "data"
 
     # BPE Output directory
-    bpe_dir = "data_bpe"
+    bpe_dir = "data_bpe_5000"
     os.makedirs(bpe_dir, exist_ok=True)
 
     # Vocab files generated
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     dev_bpe_de = os.path.join(bpe_dir, "dev.en-de.de")
 
     # BPE code file
-    bpe_code = os.path.join(bpe_dir, "bpe_code.bpe")
+    bpe_code = os.path.join(bpe_dir, "bpe_code_5000.bpe")
 
     # Apply BPE encoding to test and dev data
     apply_bpe(test_en, test_bpe_en, bpe_code, vocab_en)
