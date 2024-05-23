@@ -45,8 +45,8 @@ if __name__ == "__main__":
     run_subword_nmt_learn_bpe(train_file_en, train_file_de, num_operations, codes_file, vocab_file_en, vocab_file_de)
 
     # Apply BPE to training data
-    train_bpe_en = os.path.join(output_dir, "sampled_train.en-de.BPE.en")
-    train_bpe_de = os.path.join(output_dir, "sampled_train.en-de.BPE.de")
+    train_bpe_en = os.path.join(output_dir, "train.BPE.en")
+    train_bpe_de = os.path.join(output_dir, "train.BPE.de")
 
     run_subword_nmt_apply_bpe(train_file_en, train_bpe_en, codes_file, vocab_file_en)
     run_subword_nmt_apply_bpe(train_file_de, train_bpe_de, codes_file, vocab_file_de)
