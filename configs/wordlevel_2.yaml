@@ -20,7 +20,6 @@ data:
     max_sent_length: 100
     # use of "voc_limit" recommended for word-level NMT, take 2000 as mentioned in the exercise
     voc_limit: 2000
-    # inspired by exercise 4
     tokenizer_cfg:
       pretokenizer: "moses"
   trg:
@@ -33,7 +32,6 @@ data:
     max_sent_length: 100
     # use of "voc_limit" recommended for word-level NMT, take 2000 as mentioned in the exercise
     voc_limit: 2000
-    # inspired by exercise 4
     tokenizer_cfg:
       pretokenizer: "moses"
 

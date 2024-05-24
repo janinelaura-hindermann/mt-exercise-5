@@ -23,7 +23,7 @@ data:
     voc_file: "data_bpe_5000/joint_vocab_clean.txt"
     # inspired by exercise 4
     tokenizer_type: "subword-nmt"
-    # TODO
+    # inspired by exercise 4
     tokenizer_cfg:
       pretokenizer: "none"
       num_merges: 5000
@@ -41,7 +41,7 @@ data:
     voc_file: "data_bpe_5000/joint_vocab_clean.txt"
     # inspired by exercise 4
     tokenizer_type: "subword-nmt"
-    # TODO
+    # inspired by exercise 4
     tokenizer_cfg:
       pretokenizer: "none"
       num_merges: 5000
