@@ -72,7 +72,7 @@ source path in the script directly.
 
 We added config files for the word-level and the bpe model in the `configs` directory.
 
-    wordlevel2_config.yaml
+    wordlevel_2.yaml
     bpe_2000.yaml
     bpe_5000.yaml
 
@@ -116,18 +116,11 @@ Now we have to create a joint vocabulary file. For this, we created the followin
 It concatenates both of the vocab output files from the previous step and removes counts (such as mentioned in the
 exercise) and removes duplicates.
 
-The last step is to also reapply the byte pair encoding for the validation and test data. For this purpose we created
-the following script:
-
-    apply_bpe_dev_test.py
-
-Now we have the BPE files for the training, validation and test data.
-
 ## Experiments
 
 ### Wordlevel
 
-For the wordlevel model, we configured the model in the `wordlevel.yaml` file.
+For the wordlevel model, we configured the model in the `wordlevel_2.yaml` file.
 Here, we specified the `voc_limit` to 2000 such as mentioned in the exercise.
 As tokenizer, we take moses.
 
