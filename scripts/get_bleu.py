@@ -26,6 +26,7 @@ if __name__ == "__main__":
     hyp_file_wordlevel = "../models/model_wordlevel_2/00026000.hyps.test"
     hyp_file_bpe_2000 = "../models/model_bpe_2000/00045000.hyps.test"
     hyp_file_bpe_5000 = "../models/model_bpe_5000/00038500.hyps.test"
+    hyp_file_bpe_2000_bpe_data = "../models/model_bpe_2000_bpe_training_data/00045000.hyps.test"
     ref_file = "data/test.en-de.de"
 
     bleu_score_wordlevel = get_bleu_score(hyp_file_wordlevel, ref_file)

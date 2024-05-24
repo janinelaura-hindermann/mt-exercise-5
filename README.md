@@ -72,8 +72,9 @@ source path in the script directly.
 
 We added config files for the word-level and the bpe model in the `configs` directory.
 
-    bpe_config.yaml
-    wordlevel_config.yaml
+    wordlevel2_config.yaml
+    bpe_2000.yaml
+    bpe_5000.yaml
 
 ## Learn BPE model and create vocabulary file
 
@@ -142,7 +143,8 @@ We did again the steps before, created a new vocabulary file and specified it in
 
 ## Evaluation
 
-For our trained models we get the BLEU Score wit the following scripts:
+For our trained models we get the BLEU Score with the following scripts. We modified it according to our directory
+structure and file names.
 
     evaluate_wordlevel2.sh
     evaluate_bpe_2000.sh

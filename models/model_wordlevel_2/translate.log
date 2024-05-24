@@ -1,0 +1,44 @@
+2024-05-24 17:03:15,301 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-24 17:03:15,329 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-24 17:03:15,384 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-24 17:03:15,679 - INFO - joeynmt.helpers - Load model from /Users/janinehindermann/Documents/workarea/mt-exercise-5/models/model_wordlevel_2/26000.ckpt.
+2024-05-24 17:03:15,890 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:03:15,890 - INFO - joeynmt.tokenizers - de tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:03:16,017 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-24 17:03:16,017 - INFO - joeynmt.prediction - Predicting 1568 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-24 17:04:04,928 - INFO - joeynmt.prediction - Generation took 48.8765[sec]. (No references given)
+2024-05-24 17:05:50,978 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-24 17:05:51,005 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-24 17:05:51,064 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-24 17:05:51,360 - INFO - joeynmt.helpers - Load model from /Users/janinehindermann/Documents/workarea/mt-exercise-5/models/model_wordlevel_2/26000.ckpt.
+2024-05-24 17:05:51,563 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:05:51,563 - INFO - joeynmt.tokenizers - de tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:05:51,689 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-24 17:05:51,689 - INFO - joeynmt.prediction - Predicting 1568 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-24 17:06:40,692 - INFO - joeynmt.prediction - Generation took 48.9681[sec]. (No references given)
+2024-05-24 17:40:55,690 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-24 17:40:55,734 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-24 17:40:55,816 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-24 17:40:56,113 - INFO - joeynmt.helpers - Load model from /Users/janinehindermann/Documents/workarea/mt-exercise-5/models/model_wordlevel_2/26000.ckpt.
+2024-05-24 17:40:56,409 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:40:56,409 - INFO - joeynmt.tokenizers - de tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 17:40:56,609 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-24 17:40:56,609 - INFO - joeynmt.prediction - Predicting 1568 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-24 17:42:00,616 - INFO - joeynmt.prediction - Generation took 63.9516[sec]. (No references given)
+2024-05-24 18:24:02,842 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-24 18:24:02,887 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-24 18:24:02,965 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-24 18:24:03,274 - INFO - joeynmt.helpers - Load model from /Users/janinehindermann/Documents/workarea/mt-exercise-5/models/model_wordlevel_2/26000.ckpt.
+2024-05-24 18:24:03,572 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 18:24:03,572 - INFO - joeynmt.tokenizers - de tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 18:24:03,772 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-24 18:24:03,773 - INFO - joeynmt.prediction - Predicting 1568 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-24 18:25:26,884 - INFO - root - Hello! This is Joey-NMT (version 2.2.0).
+2024-05-24 18:25:26,928 - INFO - joeynmt.model - Building an encoder-decoder model...
+2024-05-24 18:25:27,017 - INFO - joeynmt.model - Enc-dec model built.
+2024-05-24 18:25:27,283 - INFO - joeynmt.helpers - Load model from /Users/janinehindermann/Documents/workarea/mt-exercise-5/models/model_wordlevel_2/26000.ckpt.
+2024-05-24 18:25:27,575 - INFO - joeynmt.tokenizers - en tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 18:25:27,576 - INFO - joeynmt.tokenizers - de tokenizer: BasicTokenizer(level=word, lowercase=False, normalize=False, filter_by_length=(-1, -1), pretokenizer=moses)
+2024-05-24 18:25:27,775 - WARNING - joeynmt.helpers - `alpha` option is obsolete. Please use `beam_alpha`, instead.
+2024-05-24 18:25:27,775 - INFO - joeynmt.prediction - Predicting 1568 example(s)... (Beam search with beam_size=5, beam_alpha=1.0, n_best=1, min_output_length=1, max_output_length=-1, return_prob='none', generate_unk=True, repetition_penalty=-1, no_repeat_ngram_size=-1)
+2024-05-24 18:26:24,446 - INFO - joeynmt.prediction - Generation took 56.6173[sec]. (No references given)

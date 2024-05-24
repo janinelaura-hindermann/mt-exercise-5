@@ -17,7 +17,7 @@ SECONDS=0
 logs=$base/logs
 
 # --- TODO add model name here ---
-model_name=wordlevel_2
+model_name=bpe_2000_bpe_training_data
 
 mkdir -p $logs
 
