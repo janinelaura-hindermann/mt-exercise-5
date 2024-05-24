@@ -23,12 +23,15 @@ def get_bleu_score(hyp_file, ref_file):
 
 
 if __name__ == "__main__":
+    hyp_file_wordlevel = "../models/model_wordlevel_2/00026000.hyps.test"
     hyp_file_bpe_2000 = "../models/model_bpe_2000/00045000.hyps.test"
     hyp_file_bpe_5000 = "../models/model_bpe_5000/00038500.hyps.test"
     ref_file = "data/test.en-de.de"
 
+    bleu_score_wordlevel = get_bleu_score(hyp_file_wordlevel, ref_file)
     bleu_score_bpe_2000 = get_bleu_score(hyp_file_bpe_2000, ref_file)
     bleu_score_bpe_5000 = get_bleu_score(hyp_file_bpe_5000, ref_file)
 
+    print(f"BLEU score for word-level: {bleu_score_wordlevel}")
     print(f"BLEU score for BPE 2000: {bleu_score_bpe_2000}")
     print(f"BLEU score for BPE 5000: {bleu_score_bpe_5000}")

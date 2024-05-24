@@ -17,7 +17,7 @@ SECONDS=0
 logs=$base/logs
 
 # --- TODO add model name here ---
-model_name=bpe_5000
+model_name=wordlevel_2
 
 mkdir -p $logs
 
