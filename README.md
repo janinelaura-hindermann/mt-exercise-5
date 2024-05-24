@@ -124,3 +124,30 @@ Now we have the BPE files for the training, validation and test data.
 
 ## Experiments
 
+### Wordlevel
+
+For the wordlevel model, we configured the model in the `wordlevel.yaml` file.
+Here, we specified the `voc_limit` to 2000 such as mentioned in the exercise.
+As tokenizer, we take moses.
+
+### BPE 2000
+
+For the BPE model with 2000 vocabulary size, we configured the model in the `bpe_2000.yaml` file and specified
+the `voc_file` which we have created in the step before.
+
+### BPE 5000
+
+To experiment with the BPE model, we now have taken a vocabulary size of 5000.
+We did again the steps before, created a new vocabulary file and specified it in the `bpe_5000.yaml` file.
+
+## Evaluation
+
+For our trained models we get the BLEU Score wit the following script:
+
+    get_bleu.py
+
+For getting the BLEU score we used the `sacrebleu` library.
+The scripts automatically extracts the BLEU score from the output JSON of the command.
+
+
+
