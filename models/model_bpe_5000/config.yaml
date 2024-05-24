@@ -4,11 +4,11 @@ joeynmt_version: "2.0.0"
 
 data:
   # take the sampled training data
-  train: "data_bpe_5000/train.en-de"
+  train: "data_sampled/sampled_train.en-de"
   # take the original dev data
-  dev: "data_bpe_5000/dev.en-de"
+  dev: "data/dev.en-de"
   # take the original test data
-  test: "data_bpe_5000/test.en-de"
+  test: "data/test.en-de"
   dataset_type: "plain"
   src:
     lang: "en"
