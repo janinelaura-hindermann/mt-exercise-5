@@ -142,12 +142,62 @@ We did again the steps before, created a new vocabulary file and specified it in
 
 ## Evaluation
 
-For our trained models we get the BLEU Score wit the following script:
+For our trained models we get the BLEU Score wit the following scripts:
 
-    get_bleu.py
+    evaluate_wordlevel2.sh
+    evaluate_bpe_2000.sh
+    evaluate_bpe_5000.sh
 
-For getting the BLEU score we used the `sacrebleu` library.
-The scripts automatically extracts the BLEU score from the output JSON of the command.
+**Output for wordlevel:**
+
+```
+{
+ "name": "BLEU",
+ "score": 12.6,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.2",
+ "verbose_score": "37.5/16.5/8.6/4.8 (BP = 1.000 ratio = 1.305 hyp_len = 39764 ref_len = 30475)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.2"
+}
+```
+
+**Output for BPE 2000:**
+
+```
+{
+ "name": "BLEU",
+ "score": 16.5,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.2",
+ "verbose_score": "51.8/23.5/12.4/6.8 (BP = 0.924 ratio = 0.927 hyp_len = 28244 ref_len = 30475)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.2"
+}
 
 
+```
+
+**Output for BPE 5000:**
+
+```
+{
+ "name": "BLEU",
+ "score": 17.0,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.2",
+ "verbose_score": "53.2/24.4/13.1/7.2 (BP = 0.908 ratio = 0.912 hyp_len = 27800 ref_len = 30475)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.2"
+}
+```
 
