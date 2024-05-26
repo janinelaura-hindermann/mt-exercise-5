@@ -103,8 +103,6 @@ As mentioned in the task description, we should add the `--total-symbols` to ens
 of the exact size you specify with the argument -s. Without this argument, the vocabulary
 size is approximate since the set of single characters is not taken into account.
 
-Further we heave to reapply the byte pair encoding with vocabulary filter for the German and English training data.
-
 The code can be found in the `scripts` directory:
 
     bpe_learning.py

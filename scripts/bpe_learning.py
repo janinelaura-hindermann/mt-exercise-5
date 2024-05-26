@@ -11,15 +11,6 @@ def run_subword_nmt_learn_bpe(train_file_en, train_file_de, num_operations, code
     subprocess.run(command, shell=True, check=True)
 
 
-def run_subword_nmt_apply_bpe(input_file, output_file, codes_file, vocab_file):
-    command = (
-        f"subword-nmt apply-bpe -c {codes_file} --vocabulary {vocab_file} --vocabulary-threshold 50 "
-        f"< {input_file} > {output_file}"
-    )
-    print(f"Running command: {command}")
-    subprocess.run(command, shell=True, check=True)
-
-
 if __name__ == "__main__":
     # Base directory
     base_dir = os.path.abspath(os.path.dirname(__file__))
@@ -43,10 +34,3 @@ if __name__ == "__main__":
 
     # Run BPE learning
     run_subword_nmt_learn_bpe(train_file_en, train_file_de, num_operations, codes_file, vocab_file_en, vocab_file_de)
-
-    # Apply BPE to training data
-    train_bpe_en = os.path.join(output_dir, "train.en-de.en")
-    train_bpe_de = os.path.join(output_dir, "train.en-de.de")
-
-    run_subword_nmt_apply_bpe(train_file_en, train_bpe_en, codes_file, vocab_file_en)
-    run_subword_nmt_apply_bpe(train_file_de, train_bpe_de, codes_file, vocab_file_de)
