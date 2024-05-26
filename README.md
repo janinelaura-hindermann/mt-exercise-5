@@ -196,3 +196,34 @@ structure and file names.
 }
 ```
 
+**Table with BLEU-Scores:**
+
+|     | use BPE | vocabulary size | BLEU |  
+|-----|---------|-----------------|------|
+| (a) | no      | 2000            | 12.6 |   
+| (b) | yes     | 2000            | 16.5 |   
+| (c) | yes     | 5000            | 17.0 |  
+
+**Observations**
+
+- Our BPE model with vocabulary size 5000 scored the highest BLEU score (17.0), slightly better than the BPE model with
+  the vocabulary size 2000 (16.5).
+- Our worst model according to the BLEU score was the word level model with vocabulary size 2000, which was expected.
+
+**Differences in translations**
+
+Wordlevel:
+
+- The wordlevel translation contains a lot of "unk" tokens, sometimes even a few in a row.
+- Even with human judgment, it is often hard to understand the translation.
+- But the general grammatical structure seems to be quite correct.
+
+BPE:
+
+- The BPE models do not contain "unk" tokens.
+- Sometimes there are some repeating translations ore a bit strange words.
+- Overall the BPE model seems to be more fluent and understandable than the wordlevel model, but still with a lot of
+  flaws or mistakes.
+- When only looking at the translations, I probably cannot differentiate which model is the 2000 and which is the 5000
+  model. For me it feels like they are quite equal in translation quality (the BLEU score indicates this too).
+
