@@ -264,7 +264,18 @@ the two desired plots.
 
 ![Beam Size vs. BLEU Score](beam_size_translations/beam_size_vs_bleu_score.png)
 
+- There is a big difference between the lowest beam size of 1 and the second-lowest beam size of 2.
+- There is not an improvement in the BLEU score when increasing the beam size from 4 further on. The score
+  remains 16.9 or 17.0.
+- This means, larger beam size do not necessarily lead to better BLEU scores.
 
 ## Beam Size vs. Time Taken
 
 ![Beam Size vs. Time Taken](beam_size_translations/beam_size_vs_time_taken.png)
+
+- The time taken increases linearly with the beam size.
+
+## Personal take on
+
+Regarding the graphs, I would take a beam size of 4. This leads to the best possible BLEU score (for this setting) with
+the least time (e. g. half as much time as for beam size 8 but with the same results).
