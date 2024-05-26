@@ -44,7 +44,7 @@ Evaluate a trained model with
 
 ---
 
-# Modifications
+# Modifications (Task 1)
 
 To activate venv:
 source ./../venvs/torch3/bin/activate
@@ -223,5 +223,27 @@ BPE:
 - Overall the BPE model seems to be more fluent and understandable than the wordlevel model, but still with a lot of
   flaws or mistakes.
 - When only looking at the translations, I probably cannot differentiate which model is the 2000 and which is the 5000
-  model. For me it feels like they are quite equal in translation quality (the BLEU score indicates this too).
+  model. For me, it feels like they are quite equal in translation quality (the BLEU score indicates this too).
 
+# Modifications (Task 2)
+
+Since our BPE model with token size 5000 is the best, we take this one.
+For this purpose, please take a look at the script:
+
+    beam_size.py
+
+For running this script, you first have to do `pip install ruamel.yaml`.
+
+The script first creates 10 copies of the existing configuration file, each with a different beam size, from 1-10.
+These are stored in the directory `configs/bpe_5000_beam_size`.
+
+For the evaluation, please take a look at the following script:
+
+    evaluate.py
+
+Run this script in the `scripts` directory with `python3 evaluate.py`.
+
+This script does basically the same as the already given `evaluate.sh` with some modifications.
+The script takes the directory containing all the yaml-scripts with the different beam sizes and iterates through them.
+For every file, it stores the translations and additionally the output (which would be otherwise written to the console)
+in a .txt file in the directory `beam_size_translations`.
