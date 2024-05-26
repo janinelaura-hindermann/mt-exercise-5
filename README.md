@@ -241,7 +241,8 @@ For the evaluation, please take a look at the following script:
 
     evaluate.py
 
-Run this script in the `scripts` directory with `python3 evaluate.py`.
+Run this script in the `scripts` directory with `python3 evaluate.py` (Assuming you are in the venv and in the `scripts`
+directory).
 
 This script does basically the same as the already given `evaluate.sh` with some modifications.
 The script takes the directory containing all the yaml-scripts with the different beam sizes and iterates through them.
@@ -251,4 +252,19 @@ It also tracks time, but this doesn't seem to work properly.
 But in the output produced by Joey NMT, there is also a time measurement, so we are just taking this for the
 calculations.
 
+For making the visualization, please take a look at the following script:
 
+    beam_visualization.py
+
+It first takes all the relevant statistics (BLEU, time taken) out of the translation files and stores them in a .csv
+called `translation_metrics` again in the `beam_size_translations` directory. Further it reads the .csv file and creates
+the two desired plots.
+
+## Beam Size vs. BLEU Score
+
+![Beam Size vs. BLEU Score](beam_size_translations/beam_size_vs_bleu_score.png)
+
+
+## Beam Size vs. Time Taken
+
+![Beam Size vs. Time Taken](beam_size_translations/beam_size_vs_time_taken.png)
