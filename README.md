@@ -247,3 +247,8 @@ This script does basically the same as the already given `evaluate.sh` with some
 The script takes the directory containing all the yaml-scripts with the different beam sizes and iterates through them.
 For every file, it stores the translations and additionally the output (which would be otherwise written to the console)
 in a .txt file in the directory `beam_size_translations`.
+It also tracks time, but this doesn't seem to work properly.
+But in the output produced by Joey NMT, there is also a time measurement, so we are just taking this for the
+calculations.
+
+
