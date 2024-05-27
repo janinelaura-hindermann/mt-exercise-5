@@ -275,7 +275,14 @@ the two desired plots.
 
 - The time taken increases linearly with the beam size.
 
-## Personal take on
+## Personal take on / Findings
 
-Regarding the graphs, I would take a beam size of 4. This leads to the best possible BLEU score (for this setting) with
-the least time (e. g. half as much time as for beam size 8 but with the same results).
+Looking at the graphs, it is immediately apparent that beam size significantly affects both the BLEU score and the time taken to generate the translations.
+
+As stated below the first graph, there is a substantial improvement in the BLEU score by increasing the beam size from 1 to 2. This suggests that considering more hypotheses during translation can greatly improve translation quality. However, beyond a beam size of 4, the BLEU score stabilizes around 17.0. This indicates that larger beam sizes do not necessarily provide further improvements in translation quality, as BLEU scores remain constant from beam size 4.
+
+As for the time taken to generate translations, it increases linearly with beam size. For example, the time taken for a beam size of 8 is about twice that for a beam size of 4, while the BLEU scores are almost identical. This highlights a significant trade-off: while larger beam sizes might marginally improve the quality of translation, they require considerably more computational resources.
+
+Based on the results shown in the graphs, a beam size of 4 is optimal with these settings. It achieves the best possible BLEU score (about 17.0) while keeping the translation time relatively low. Increasing the beam size over 4 does not produce better translation quality, but significantly increases the computational cost. Thus, this beam size offers a good compromise between achieving high-quality translation and maintaining computational efficiency.
+
+For future experiments it might be interesting to think about exploring different datasets, languages, evaluation metrics, ... and perhaps even investigate the impact of other hyperparameters.
